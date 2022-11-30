@@ -22,17 +22,16 @@ TradingView.loginUser(process.env.TV_USER, process.env.TV_PASSWORD, false).then(
   // });
 
   const chart = new client.Session.Chart();
-  const pair = 'BINANCE:BTCUSDT';
+  const pair = 'BINANCE:ETHUSDT';
   const timeframe = '1D';
+  const range = 365*5;
   
   chart.setMarket(pair, {
       timeframe: timeframe,
-      currency: 'USD',
-      // replay: Math.round(Date.now() / 1000) - 86400 * 7, // Seven days before now
-      // range: 5*365,
+      range: range,
   });
 
-    TradingView.getIndicator('PUB;ryMeUolWwdyo9F3MNleMvPPmoSDpGY4n').then(async (indic) => {
+  TradingView.getIndicator('PUB;ryMeUolWwdyo9F3MNleMvPPmoSDpGY4n').then(async (indic) => {
     
     console.log(`Loading '${indic.description}' study...`);
     
@@ -41,11 +40,9 @@ TradingView.loginUser(process.env.TV_USER, process.env.TV_PASSWORD, false).then(
     indic.setOption('initial_capital', 100);
     // indic.setOption('default_qty_value', 99);
     // indic.setOption('default_qty_type', 'percent_of_equity');
-    indic.setOption('currency', 'USD');
-    indic.setOption('From_Year', 2005); // TODO: Does not seem to have an effect.
+    // indic.setOption('currency', 'USD');
     
-
-    console.log('inputs', JSON.stringify(indic.inputs, null, 4));
+    // console.log('inputs', JSON.stringify(indic.inputs, null, 4));
     
     const study = new chart.Study(indic);    
     // console.log('study', JSON.stringify(study, null, 4));
@@ -55,7 +52,7 @@ TradingView.loginUser(process.env.TV_USER, process.env.TV_PASSWORD, false).then(
     
 
     study.onUpdate(() => {
-      // console.log('Strategy report', JSON.stringify(study.strategyReport, null, 4));
+      // console.log('Strategy report', JSON.stringify(study.strategyReport, null, 4));      
 
       let exchange = pair.split(':')[0];
       let symbol = pair.split(':')[1];
@@ -64,6 +61,9 @@ TradingView.loginUser(process.env.TV_USER, process.env.TV_PASSWORD, false).then(
       // console.log('Prices periods:', JSON.stringify(chart.periods, null, 4));
       // console.log('Study periods:', JSON.stringify(study.periods, null, 4));
       
+      // for (i in chart.periods) {
+      //   console.log(new Date(chart.periods[i].time*1000).toISOString())
+      // }
       console.log(new Date(study.strategyReport.settings.dateRange.backtest.from).toISOString());
       console.log(new Date(study.strategyReport.settings.dateRange.backtest.to).toISOString());
 
@@ -75,7 +75,7 @@ TradingView.loginUser(process.env.TV_USER, process.env.TV_PASSWORD, false).then(
       console.log('done');
     });
   });
-  
+
 
 }).catch((err) => {
   console.error('Login error:', err.message);
