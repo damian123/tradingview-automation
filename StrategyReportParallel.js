@@ -29,24 +29,13 @@ function runBackTest(pairs) {
                     range: range,
                 });
 
-                TradingView.getIndicator('PUB;ryMeUolWwdyo9F3MNleMvPPmoSDpGY4n').then(async (indic) => {
-                    
-                    console.log(`Loading '${indic.description}' study...`);
-                    
+                TradingView.getIndicator('PUB;ryMeUolWwdyo9F3MNleMvPPmoSDpGY4n').then(async (indic) => {                                    
+
                     indic.setOption('commission_type', 'percent');
                     indic.setOption('commission_value', 0.1);
                     indic.setOption('initial_capital', 100);
-                    // indic.setOption('default_qty_value', 99);
-                    // indic.setOption('default_qty_type', 'percent_of_equity');
-                    // indic.setOption('currency', 'USD');
-                    
-                    // console.log('inputs', JSON.stringify(indic.inputs, null, 4));
                     
                     const study = new chart.Study(indic);    
-                    // console.log('study', JSON.stringify(study, null, 4));
-
-                    // study.strategyReport.settings.dateRange.backtest
-                    // console.log('Strategy report', JSON.stringify(study.strategyReport.settings.dateRange.backtest, null, 4));
                     
                     study.onError((...error) => {
                         reject(error[0]);
@@ -60,13 +49,6 @@ function runBackTest(pairs) {
 
                         fs.writeFileSync(`${exchange}-${symbol}-${timeframe}.json`, JSON.stringify(study.strategyReport, null, 4));
                         
-                        // for (i in chart.periods) {
-                        //   console.log(new Date(chart.periods[i].time*1000).toISOString())
-                        // }
-                        // console.log(new Date(study.strategyReport.settings.dateRange.backtest.from).toISOString());
-                        // console.log(new Date(study.strategyReport.settings.dateRange.backtest.to).toISOString());
-
-                                    
                         study.remove();
                         client.end();
                         resolve("done")
@@ -84,9 +66,7 @@ async function run () {
         runBackTest(['BINANCE:BTCUSDT']),
         runBackTest(['BINANCE:DOTUSDT']),
     ]);
-    // wait...
     const statuses = await statusesPromise;
-    // after 1 second
     console.log(statuses); 
 }
 
