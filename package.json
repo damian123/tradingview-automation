@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@mathieuc/tradingview": "^3.3.3",
+    "ccxt": "^2.2.65",
     "dotenv": "^16.0.3"
   }
 }
