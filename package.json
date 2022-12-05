@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "@mathieuc/tradingview": "^3.3.3",
+    "@supercharge/promise-pool": "^2.3.2",
     "ccxt": "^2.2.65",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "winston": "^3.8.2"
   }
 }
