@@ -4,6 +4,7 @@
     "@supercharge/promise-pool": "^2.3.2",
     "ccxt": "^2.2.65",
     "dotenv": "^16.0.3",
+    "json2csv": "^5.0.7",
     "winston": "^3.8.2"
   }
 }
