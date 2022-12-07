@@ -33,10 +33,10 @@ async function run () {
             backTest["exchange"] = basename.substring(0, basename.indexOf("-"));
             backTest["pair"] =  basename.substring(basename.indexOf("-") + 1, basename.lastIndexOf("-"));
             backTest["timeframe"] = basename.substring(basename.lastIndexOf("-")+1, basename.lastIndexOf("."));
-
-            const fields = ['exchange', 
-                            'pair', 
-                            'timeframe', 
+            
+            const fields = ['exchange',
+                            'pair',
+                            'timeframe',
                             'performance.all.percentProfitable',
                             'performance.all.profitFactor',
                             'performance.all.totalTrades',
@@ -44,6 +44,8 @@ async function run () {
                             'performance.maxStrategyDrawDownPercent',
                             'performance.all.avgTradePercent',
                             'performance.all.avgBarsInTrade',
+                            "settings.dateRange.backtest.from",
+                            "settings.dateRange.backtest.to",
                             ];
 
             includeHeader = i==0 ? true : false; // Only write the header in the csv file at the first row
