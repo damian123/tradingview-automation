@@ -26,18 +26,13 @@ async function run () {
 
         for (i in filenames)
         {
-            if (i == 0)
-                includeHeader = true;
-            else
-                includeHeader = false;
-
             filename = filenames[i]
             exchange = 'BINANCE';
             const backTest = JSON.parse(fs.readFileSync(filename));
-            name = path.basename(filename)
-            backTest["exchange"] = name.substring(0, name.indexOf("-"));
-            backTest["pair"] =  name.substring(name.indexOf("-") + 1, name.lastIndexOf("-"));
-            backTest["timeframe"] = name.substring(name.lastIndexOf("-")+1, name.lastIndexOf("."));
+            basename = path.basename(filename)
+            backTest["exchange"] = basename.substring(0, basename.indexOf("-"));
+            backTest["pair"] =  basename.substring(basename.indexOf("-") + 1, basename.lastIndexOf("-"));
+            backTest["timeframe"] = basename.substring(basename.lastIndexOf("-")+1, basename.lastIndexOf("."));
 
             const fields = ['exchange', 
                             'pair', 
@@ -51,13 +46,23 @@ async function run () {
                             'performance.all.avgBarsInTrade',
                             ];
 
+            includeHeader = i==0 ? true : false; // Only write the header in the csv file at the first row
             const json2csvParser = new Parser({fields, header: includeHeader });
             csv = json2csvParser.parse(backTest);
-            if (includeHeader != true)
-                csv = '\n' + csv;
+            if (includeHeader == true) {
+              fs.unlink(csvFilename, (err) => { // Delete the exiting csv file if it exists. 
+                if (err) {
+                  if (err.code !== 'ENOENT') { // ignore the error if the file is not already there.
+                    throw err;
+                  }
+                }
+              });
+            }
+            else  {
+              csv = '\n' + csv;
+            }
             fs.appendFile(csvFilename, csv, function(err) {
                 if (err) throw err;
-                // console.log(csv);
             });
         };
 
