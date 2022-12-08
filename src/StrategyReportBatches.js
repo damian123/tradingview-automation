@@ -5,34 +5,36 @@ const { createLogger, format, transports } = require('winston');
 const { splat, combine, timestamp, printf } = format;
 require('dotenv').config();
 
-const timeframe = '2D';
-const range = 365*3;
+const timeframe = '1W';
+const range = 365*5;
 
-   // Setup logger
-   const myFormat = printf( ({ level, message, timestamp , ...metadata}) => {
-    let msg = `${timestamp} [${level}] : ${message} `  
-    if(metadata) {
-      msg += JSON.stringify(metadata)
-    }
-    return msg
-  });
-  
-  const logger = createLogger({
-    level: 'debug',
-    format: combine(
-      format.colorize(),
-      splat(),
-      timestamp(),
-      myFormat
-    ),
-    transports: [
-        new transports.Console({ level: 'info' }),
-        new transports.File({ filename: 'errors.log', level: 'error' }),
-    ]
-  });
-  module.exports = logger
+// Setup logger
+const myFormat = printf( ({ level, message, timestamp , ...metadata}) => {
+let msg = `${timestamp} [${level}] : ${message} `  
+if(metadata) {
+    msg += JSON.stringify(metadata)
+}
+return msg
+});
 
-function runBackTest(pair) {
+const logger = createLogger({
+level: 'debug',
+format: combine(
+    format.colorize(),
+    splat(),
+    timestamp(),
+    myFormat
+),
+transports: [
+    new transports.Console({ level: 'info' }),
+    new transports.File({ filename: 'errors.log', level: 'error' }),
+]
+});
+module.exports = logger
+
+async function runBackTest(pair) {
+    logger.info(`processing ${pair}`)
+
     return new Promise((resolve, reject) => {
         const client = new TradingView.Client({
             token: process.env.TV_SESSION,
@@ -47,7 +49,7 @@ function runBackTest(pair) {
         // });
 
         const chart = new client.Session.Chart();
-       
+        
         chart.setMarket(pair, {
             timeframe: timeframe,
             range: range,
@@ -83,6 +85,7 @@ function runBackTest(pair) {
 
             // Print all input options to the indicator script, this is useful when I need to know what to set above.
             // console.log('inputs', JSON.stringify(indic.inputs, null, 4));
+            // TODO: Save the input once per run and save all outputs in a new folder per run.
 
             const study = new chart.Study(indic);
 
@@ -100,9 +103,11 @@ function runBackTest(pair) {
 
                 study.remove();
                 client.end();
+                resolve("done")
             });
         });
     });
+    logger.info(`done with ${pair}`)
 };
 
 async function run () {
@@ -112,16 +117,19 @@ async function run () {
     for (const m in markets) {
         pairs.push("BINANCE:".concat(markets[m].id));
     }
+    logger.debug(`All pairs: ${pairs}`)
 
     const { results, errors } = await PromisePool
       .for(pairs)
-      .withConcurrency(3)
+      .withConcurrency(5)
       .process(async data => {
         const status = await runBackTest(data)
         return status
     })
-    logger.into(results);
-    logger.error(errors);
+    errors.forEach(error => {
+        logger.error(error);
+      });
+    logger.info("All done.")
 }
 
 run()
