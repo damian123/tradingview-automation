@@ -33,7 +33,6 @@ transports: [
 module.exports = logger
 
 async function runBackTest(pair) {
-    logger.info(`processing ${pair}`)
 
     return new Promise((resolve, reject) => {
         try {
@@ -136,7 +135,8 @@ async function run () {
     const { results, errors } = await PromisePool
       .for(pairs)
       .withConcurrency(3)
-      .process(async data => {
+      .process(async (data, index, pool) => {
+        logger.info(`${index} ${pool.processedPercentage()}%`);
         await runBackTest(data);
     })
     // results.forEach(result => {
