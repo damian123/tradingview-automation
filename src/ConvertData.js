@@ -44,8 +44,16 @@ async function run () {
                             'performance.maxStrategyDrawDownPercent',
                             'performance.all.avgTradePercent',
                             'performance.all.avgBarsInTrade',
+                            'performance.all.avgBarsInWinTrade',
+                            'performance.all.avgBarsInLossTrade',                                                        
+                            'performance.all.numberOfLosingTrades',
+                            'performance.all.numberOfWiningTrades',                                                      
+                            'performance.buyHoldReturnPercent',
                             "settings.dateRange.backtest.from",
                             "settings.dateRange.backtest.to",
+                            'performance.all.percentProfitable',
+                            'performance.long.netProfitPercent',
+                            'performance.short.netProfitPercent',
                             ];
 
             includeHeader = i==0 ? true : false; // Only write the header in the csv file at the first row
