@@ -1,6 +1,6 @@
 # tradingview-automation
 
-Load backtest strategy results from TradiongView for a set of token pairs.
+Load backtest strategy results from TradingView for a set of token pairs.
 
 ## Manual Installation
 
