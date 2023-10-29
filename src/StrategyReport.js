@@ -1,5 +1,7 @@
 var TradingView = require("@mathieuc/tradingview")
 var fs = require('fs');
+const { createLogger, format, transports } = require('winston');
+const { splat, combine, timestamp, printf } = format;
 require('dotenv').config();
 
 const pairs = ['BINANCE:BTCUSDT', 'BINANCE:FETUSDT'];

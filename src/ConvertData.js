@@ -74,11 +74,20 @@ async function run () {
 
             const json2csvParser = new Parser({fields, header: includeHeader });
             csv = json2csvParser.parse(backTest);
-            if (includeHeader != true)
-                csv = '\n' + csv;
+            if (includeHeader == true) {
+              fs.unlink(csvFilename, (err) => { // Delete the exiting csv file if it exists. 
+                if (err) {
+                  if (err.code !== 'ENOENT') { // ignore the error if the file is not already there.
+                    throw err;
+                  }
+                }
+              });
+            }
+            else  {
+              csv = '\n' + csv;
+            }
             fs.appendFile(csvFilename, csv, function(err) {
                 if (err) throw err;
-                // console.log(csv);
             });
         };
 

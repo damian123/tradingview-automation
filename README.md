@@ -1,5 +1,7 @@
 # tradingview-automation
 
+Load backtest strategy results from TradingView for a set of token pairs.
+
 ## Manual Installation
 
 - git clone https://github.com/damian123/tradingview-automation.git
