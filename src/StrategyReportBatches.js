@@ -8,6 +8,7 @@ function runBackTest(pair) {
     return new Promise((resolve, reject) => {
         const client = new TradingView.Client({
             token: process.env.TV_SESSION,
+            signature: process.env.TV_SESSION_SIGN
             // DEBUG: true
         });
 
@@ -28,6 +29,8 @@ function runBackTest(pair) {
         });
 
         TradingView.getIndicator('PUB;ryMeUolWwdyo9F3MNleMvPPmoSDpGY4n').then(async (indic) => {
+
+            console.log(`Loading '${indic.description}' study...`);
 
             indic.setOption('commission_type', 'percent');
             indic.setOption('commission_value', 0.1);
@@ -70,6 +73,11 @@ async function run () {
         );
       }
 
+    TradingView.getUser(process.env.TV_SESSION, process.env.TV_SESSION_SIGN).then((user) => {
+        console.log(`TradingView user id: ${user.username}`);    
+        console.log(`TradingView user name: ${user.firstName} ${user.lastName}`);
+    });    
+
     markets = JSON.parse(fs.readFileSync('output/binance-markets.json'));
     for (const m in markets) {
         pairs.push("BINANCE:".concat(markets[m].id));
@@ -77,7 +85,7 @@ async function run () {
 
     const { results, errors } = await PromisePool
       .for(pairs)
-      .withConcurrency(3)
+      .withConcurrency(1)
       .process(async data => {
         const status = await runBackTest(data)
         return status

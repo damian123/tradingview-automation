@@ -11,9 +11,9 @@ const exchange = new ccxt.binance ({
     const markets = await exchange.loadMarkets();
 
     data = JSON.stringify(markets);
-    log (exchange['name'] + ' supports ' + Object.keys (markets).length + ' pairs')
+    console.log(exchange['name'] + ' supports ' + Object.keys (markets).length + ' pairs')
     fs.writeFileSync('output/binance-markets.json', data);
-    log ('Markets info written to output/binance-markets.json')
+    console.log('Markets info written to output/binance-markets.json')
     // log (markets)
     // console.log (exchange.describe ())
 }) ()
