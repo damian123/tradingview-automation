@@ -1,0 +1,1839 @@
+Loading 'LuxAlgo® - Backtesting System™ (OSC)' study...
+TradingView user id: damian123456789
+TradingView user name: Lars Schouw
+inputs {
+    "pineFeatures": {
+        "name": "pineFeatures",
+        "inline": "pineFeatures",
+        "internalID": "pineFeatures",
+        "type": "text",
+        "value": "{\"strategy\":1,\"plot\":1,\"str\":1,\"array\":1,\"ta\":1,\"math\":1,\"map\":1,\"type\":1,\"builtin_methods\":1}",
+        "isHidden": true,
+        "isFake": true
+    },
+    "in_0": {
+        "name": "Backtesting Window",
+        "inline": "window",
+        "internalID": "Backtesting_Window",
+        "tooltip": "Enable Backtest Window. Controls the amount of most recent bars backtested by the backtesting system. Disable to use deep backtesting.",
+        "type": "bool",
+        "value": true,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_1": {
+        "name": "",
+        "inline": "window",
+        "internalID": "",
+        "type": "integer",
+        "value": 4000,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_2": {
+        "name": "Money Flow",
+        "inline": "mfcondition",
+        "internalID": "Money_Flow",
+        "type": "bool",
+        "value": true,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_3": {
+        "name": "",
+        "inline": "mfcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Crossing Over",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_4": {
+        "name": "",
+        "inline": "mfcondition",
+        "internalID": "",
+        "type": "float",
+        "value": 50,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_5": {
+        "name": "Step",
+        "inline": "mfcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_6": {
+        "name": "Over Flow  ",
+        "inline": "ofcondition",
+        "internalID": "Over_Flow",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_7": {
+        "name": "",
+        "inline": "ofcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Crossing Over",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_8": {
+        "name": "",
+        "inline": "ofcondition",
+        "internalID": "",
+        "type": "float",
+        "value": 50,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_9": {
+        "name": "Step",
+        "inline": "ofcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_10": {
+        "name": "Hyper Wave",
+        "inline": "hwcondition",
+        "internalID": "Hyper_Wave",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_11": {
+        "name": "",
+        "inline": "hwcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Any Bullish",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Any Bullish",
+            "Regular Bullish",
+            "Oversold Bullish",
+            "Any Bearish",
+            "Regular Bearish",
+            "Overbought Bearish",
+            "Greater Than",
+            "Lower Than",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_12": {
+        "name": "",
+        "inline": "hwcondition",
+        "internalID": "",
+        "type": "float",
+        "value": 50,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_13": {
+        "name": "Step",
+        "inline": "hwcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_14": {
+        "name": "Reversals   ",
+        "inline": "revcondition",
+        "internalID": "Reversals",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_15": {
+        "name": "",
+        "inline": "revcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Any Reversal Up",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Any Reversal Up",
+            "Reversal Up -",
+            "Reversal Up +",
+            "Any Reversal Down",
+            "Reversal Down -",
+            "Reversal Down +"
+        ]
+    },
+    "in_16": {
+        "name": "Step",
+        "inline": "revcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_17": {
+        "name": "Divergences",
+        "inline": "divcondition",
+        "internalID": "Divergences",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_18": {
+        "name": "",
+        "inline": "divcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Bullish",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Bullish",
+            "Bearish"
+        ]
+    },
+    "in_19": {
+        "name": "Step",
+        "inline": "divcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_20": {
+        "name": "Confluence ",
+        "inline": "confcondition",
+        "internalID": "Confluence",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_21": {
+        "name": "",
+        "inline": "confcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Any Bullish",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Any Bullish",
+            "Strong Bullish",
+            "Weak Bullish",
+            "Any Bearish",
+            "Strong Bearish",
+            "Weak Bearish"
+        ]
+    },
+    "in_22": {
+        "name": "Step",
+        "inline": "confcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_23": {
+        "name": "External 1",
+        "inline": "longexternal1",
+        "internalID": "External_1",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_24": {
+        "name": "",
+        "inline": "longexternal1",
+        "internalID": "",
+        "type": "source",
+        "value": "close",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_25": {
+        "name": "",
+        "inline": "longexternal1",
+        "internalID": "",
+        "type": "text",
+        "value": "Equal",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_26": {
+        "name": "",
+        "inline": "longexternal1",
+        "internalID": "",
+        "type": "source",
+        "value": "open",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_27": {
+        "name": "External 1 Step",
+        "inline": "External_1_Step",
+        "internalID": "External_1_Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_28": {
+        "name": "External 2",
+        "inline": "longexternal2",
+        "internalID": "External_2",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_29": {
+        "name": "",
+        "inline": "longexternal2",
+        "internalID": "",
+        "type": "source",
+        "value": "close",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_30": {
+        "name": "",
+        "inline": "longexternal2",
+        "internalID": "",
+        "type": "text",
+        "value": "Equal",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_31": {
+        "name": "",
+        "inline": "longexternal2",
+        "internalID": "",
+        "type": "float",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_32": {
+        "name": "External 2 Step",
+        "inline": "External_2_Step",
+        "internalID": "External_2_Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_33": {
+        "name": "Money Flow",
+        "inline": "mfcondition",
+        "internalID": "Money_Flow",
+        "type": "bool",
+        "value": true,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_34": {
+        "name": "",
+        "inline": "mfcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Crossing Under",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_35": {
+        "name": "",
+        "inline": "mfcondition",
+        "internalID": "",
+        "type": "float",
+        "value": 50,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_36": {
+        "name": "Step",
+        "inline": "mfcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_37": {
+        "name": "Over Flow  ",
+        "inline": "ofcondition",
+        "internalID": "Over_Flow",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_38": {
+        "name": "",
+        "inline": "ofcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Crossing Under",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_39": {
+        "name": "",
+        "inline": "ofcondition",
+        "internalID": "",
+        "type": "float",
+        "value": 50,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_40": {
+        "name": "Step",
+        "inline": "ofcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_41": {
+        "name": "Hyper Wave",
+        "inline": "hwcondition",
+        "internalID": "Hyper_Wave",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_42": {
+        "name": "",
+        "inline": "hwcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Any Bearish",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Any Bullish",
+            "Regular Bullish",
+            "Oversold Bullish",
+            "Any Bearish",
+            "Regular Bearish",
+            "Overbought Bearish",
+            "Greater Than",
+            "Lower Than",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_43": {
+        "name": "",
+        "inline": "hwcondition",
+        "internalID": "",
+        "type": "float",
+        "value": 50,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_44": {
+        "name": "Step",
+        "inline": "hwcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_45": {
+        "name": "Reversals   ",
+        "inline": "revcondition",
+        "internalID": "Reversals",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_46": {
+        "name": "",
+        "inline": "revcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Any Reversal Down",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Any Reversal Up",
+            "Reversal Up -",
+            "Reversal Up +",
+            "Any Reversal Down",
+            "Reversal Down -",
+            "Reversal Down +"
+        ]
+    },
+    "in_47": {
+        "name": "Step",
+        "inline": "revcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_48": {
+        "name": "Divergences",
+        "inline": "divcondition",
+        "internalID": "Divergences",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_49": {
+        "name": "",
+        "inline": "divcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Bearish",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Bullish",
+            "Bearish"
+        ]
+    },
+    "in_50": {
+        "name": "Step",
+        "inline": "divcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_51": {
+        "name": "Confluence ",
+        "inline": "confcondition",
+        "internalID": "Confluence",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_52": {
+        "name": "",
+        "inline": "confcondition",
+        "internalID": "",
+        "type": "text",
+        "value": "Any Bearish",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Any Bullish",
+            "Strong Bullish",
+            "Weak Bullish",
+            "Any Bearish",
+            "Strong Bearish",
+            "Weak Bearish"
+        ]
+    },
+    "in_53": {
+        "name": "Step",
+        "inline": "confcondition",
+        "internalID": "Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ]
+    },
+    "in_54": {
+        "name": "External 1",
+        "inline": "shortexternal1",
+        "internalID": "External_1",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_55": {
+        "name": "",
+        "inline": "shortexternal1",
+        "internalID": "",
+        "type": "source",
+        "value": "close",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_56": {
+        "name": "",
+        "inline": "shortexternal1",
+        "internalID": "",
+        "type": "text",
+        "value": "Equal",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_57": {
+        "name": "",
+        "inline": "shortexternal1",
+        "internalID": "",
+        "type": "source",
+        "value": "open",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_58": {
+        "name": "External 1 Step",
+        "inline": "External_1_Step",
+        "internalID": "External_1_Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+        ]
+    },
+    "in_59": {
+        "name": "External 2",
+        "inline": "shortexternal2",
+        "internalID": "External_2",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_60": {
+        "name": "",
+        "inline": "shortexternal2",
+        "internalID": "",
+        "type": "source",
+        "value": "close",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_61": {
+        "name": "",
+        "inline": "shortexternal2",
+        "internalID": "",
+        "type": "text",
+        "value": "Equal",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_62": {
+        "name": "",
+        "inline": "shortexternal2",
+        "internalID": "",
+        "type": "float",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_63": {
+        "name": "External 2 Step",
+        "inline": "External_2_Step",
+        "internalID": "External_2_Step",
+        "type": "text",
+        "value": "1",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+        ]
+    },
+    "in_64": {
+        "name": "Long TP",
+        "inline": "fixed_long_tp",
+        "internalID": "Long_TP",
+        "tooltip": "Enable Long orders take profits. Can be determined from: a price value, an amount of currency or ticks away from the price preceeding the entry, a percentage away from the price preceeding the entry, or a multiple of an ATR away from the price preceeding the entry.",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_65": {
+        "name": "",
+        "inline": "fixed_long_tp",
+        "internalID": "",
+        "type": "text",
+        "value": "Price",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Price",
+            "Currency",
+            "Ticks",
+            "%",
+            "ATR",
+            "Auto"
+        ]
+    },
+    "in_66": {
+        "name": "",
+        "inline": "fixed_long_tp",
+        "internalID": "",
+        "type": "float",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_67": {
+        "name": "Long SL",
+        "inline": "fixed_long_sl",
+        "internalID": "Long_SL",
+        "tooltip": "Enable Long orders stop losses. Can be determined from: a price value, an amount of currency or ticks away from the price preceeding the entry, a percentage away from the price preceeding the entry, or a multiple of an ATR away from the price preceeding the entry.",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_68": {
+        "name": "",
+        "inline": "fixed_long_sl",
+        "internalID": "",
+        "type": "text",
+        "value": "Price",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Price",
+            "Currency",
+            "Ticks",
+            "%",
+            "ATR",
+            "Auto"
+        ]
+    },
+    "in_69": {
+        "name": "",
+        "inline": "fixed_long_sl",
+        "internalID": "",
+        "type": "float",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_70": {
+        "name": "Short TP",
+        "inline": "fixed_short_tp",
+        "internalID": "Short_TP",
+        "tooltip": "Enable Short orders take profits. Can be determined from: a price value, an amount of currency or ticks away from the price preceeding the entry, a percentage away from the price preceeding the entry, or a multiple of an ATR away from the price preceeding the entry.",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_71": {
+        "name": "",
+        "inline": "fixed_short_tp",
+        "internalID": "",
+        "type": "text",
+        "value": "Price",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Price",
+            "Currency",
+            "Ticks",
+            "%",
+            "ATR",
+            "Auto"
+        ]
+    },
+    "in_72": {
+        "name": "",
+        "inline": "fixed_short_tp",
+        "internalID": "",
+        "type": "float",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_73": {
+        "name": "Short SL",
+        "inline": "fixed_short_sl",
+        "internalID": "Short_SL",
+        "tooltip": "Enable Short orders stop losses. Can be determined from: a price value, an amount of currency or ticks away from the price preceeding the entry, a percentage away from the price preceeding the entry, or a multiple of an ATR away from the price preceeding the entry.",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_74": {
+        "name": "",
+        "inline": "fixed_short_sl",
+        "internalID": "",
+        "type": "text",
+        "value": "Price",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Price",
+            "Currency",
+            "Ticks",
+            "%",
+            "ATR",
+            "Auto"
+        ]
+    },
+    "in_75": {
+        "name": "",
+        "inline": "fixed_short_sl",
+        "internalID": "",
+        "type": "float",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_76": {
+        "name": "Plot Take Profits",
+        "inline": "tp",
+        "internalID": "Plot_Take_Profits",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_77": {
+        "name": "",
+        "inline": "tp",
+        "internalID": "",
+        "type": "color",
+        "value": "#089981",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_78": {
+        "name": "Plot Stop Losses",
+        "inline": "sl",
+        "internalID": "Plot_Stop_Losses",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_79": {
+        "name": "",
+        "inline": "sl",
+        "internalID": "",
+        "type": "color",
+        "value": "#f23645",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_80": {
+        "name": "Exit Long TP",
+        "inline": "long_tp",
+        "internalID": "Exit_Long_TP",
+        "tooltip": "Condition used to exit an active long position at a profit. Last setting can accept price placeholders such as open, high, low, close, hl2, ohlc4, hlc3, and hlcc4.",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_81": {
+        "name": "",
+        "inline": "long_tp",
+        "internalID": "",
+        "type": "source",
+        "value": "close",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_82": {
+        "name": "",
+        "inline": "long_tp",
+        "internalID": "",
+        "type": "text",
+        "value": "Crossing",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_83": {
+        "name": "",
+        "inline": "long_tp",
+        "internalID": "",
+        "type": "text",
+        "value": "0",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_84": {
+        "name": "Exit Long SL",
+        "inline": "long_sl",
+        "internalID": "Exit_Long_SL",
+        "tooltip": "Condition used to exit an active long position at a loss. Last setting can accept price placeholders such as open, high, low, close, hl2, ohlc4, hlc3, and hlcc4.",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_85": {
+        "name": "",
+        "inline": "long_sl",
+        "internalID": "",
+        "type": "source",
+        "value": "close",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_86": {
+        "name": "",
+        "inline": "long_sl",
+        "internalID": "",
+        "type": "text",
+        "value": "Crossing",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_87": {
+        "name": "",
+        "inline": "long_sl",
+        "internalID": "",
+        "type": "text",
+        "value": "0",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_88": {
+        "name": "Exit Short TP",
+        "inline": "short_tp",
+        "internalID": "Exit_Short_TP",
+        "tooltip": "Condition used to exit an active short position at a profit. Last setting can accept price placeholders such as open, high, low, close, hl2, ohlc4, hlc3, and hlcc4.",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_89": {
+        "name": "",
+        "inline": "short_tp",
+        "internalID": "",
+        "type": "source",
+        "value": "close",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_90": {
+        "name": "",
+        "inline": "short_tp",
+        "internalID": "",
+        "type": "text",
+        "value": "Crossing",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_91": {
+        "name": "",
+        "inline": "short_tp",
+        "internalID": "",
+        "type": "text",
+        "value": "0",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_92": {
+        "name": "Exit Short SL",
+        "inline": "short_sl",
+        "internalID": "Exit_Short_SL",
+        "tooltip": "Condition used to exit an active short position at a loss. Last setting can accept price placeholders such as open, high, low, close, hl2, ohlc4, hlc3, and hlcc4.",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_93": {
+        "name": "",
+        "inline": "short_sl",
+        "internalID": "",
+        "type": "source",
+        "value": "close",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "open",
+            "high",
+            "low",
+            "close",
+            "hl2",
+            "hlc3",
+            "hlcc4",
+            "ohlc4"
+        ]
+    },
+    "in_94": {
+        "name": "",
+        "inline": "short_sl",
+        "internalID": "",
+        "type": "text",
+        "value": "Crossing",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "Greater Than",
+            "Lower Than",
+            "Equal",
+            "Crossing Over",
+            "Crossing Under",
+            "Crossing"
+        ]
+    },
+    "in_95": {
+        "name": "",
+        "inline": "short_sl",
+        "internalID": "",
+        "type": "text",
+        "value": "0",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_96": {
+        "name": "Money Flow Length",
+        "inline": "Money_Flow_Length",
+        "internalID": "Money_Flow_Length",
+        "tooltip": "Money Flow oscillator Length. Higher values will return indication on longer term market money flow.",
+        "type": "integer",
+        "value": 35,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_97": {
+        "name": "Smooth",
+        "inline": "Smooth",
+        "internalID": "Smooth",
+        "tooltip": "Money Flow oscillator smoothing degree. Higher values will return smoother money flow outputs.",
+        "type": "integer",
+        "value": 6,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_98": {
+        "name": "Main Length",
+        "inline": "Main_Length",
+        "internalID": "Main_Length",
+        "tooltip": "Hyper Wave oscillator Length. Higher values will reflect longer term trends and return longer term signals as a result.",
+        "type": "integer",
+        "value": 7,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_99": {
+        "name": "Signal  ",
+        "inline": "signal",
+        "internalID": "Signal",
+        "tooltip": "[Dropdown] Signal line method. SMA make use of a simple moving average as signal line. TS make use of a trailing stop.\n\n[Signal Lenght] Length of the method used as signal line. Higher values will produce less signals.",
+        "type": "text",
+        "value": "SMA",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "SMA",
+            "TS"
+        ]
+    },
+    "in_100": {
+        "name": "",
+        "inline": "signal",
+        "internalID": "",
+        "type": "integer",
+        "value": 3,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_101": {
+        "name": "Divergence Sensitivity %",
+        "inline": "Divergence_Sensitivity_",
+        "internalID": "Divergence_Sensitivity_",
+        "tooltip": "Controls the sensitivity of the divergence detection to noise. Higher values will return longer term divergences.",
+        "type": "float",
+        "value": 20,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_102": {
+        "name": "Reversal Factor",
+        "inline": "Reversal_Factor",
+        "internalID": "Reversal_Factor",
+        "tooltip": "Reversals frequency. Higher value will return longer term/less frequent reversal signals.",
+        "type": "text",
+        "value": "5",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+        ]
+    },
+    "in_103": {
+        "name": "Entry Price Area",
+        "inline": "areacss",
+        "internalID": "Entry_Price_Area",
+        "tooltip": "Display an area between the closing price and current order entry price",
+        "type": "bool",
+        "value": true,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_104": {
+        "name": "",
+        "inline": "areacss",
+        "internalID": "",
+        "type": "color",
+        "value": "rgba(8,153,129,0.5)",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_105": {
+        "name": "",
+        "inline": "areacss",
+        "internalID": "",
+        "type": "color",
+        "value": "rgba(242,54,69,0.5)",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_106": {
+        "name": "Entry Price",
+        "inline": "entrycss",
+        "internalID": "Entry_Price",
+        "type": "bool",
+        "value": true,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_107": {
+        "name": "",
+        "inline": "entrycss",
+        "internalID": "",
+        "type": "color",
+        "value": "#787B86",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_108": {
+        "name": "Long Entry Message",
+        "inline": "Long_Entry_Message",
+        "internalID": "Long_Entry_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_109": {
+        "name": "Exit Long Message",
+        "inline": "Exit_Long_Message",
+        "internalID": "Exit_Long_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_110": {
+        "name": "Long TP Message",
+        "inline": "Long_TP_Message",
+        "internalID": "Long_TP_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_111": {
+        "name": "Long SL Message",
+        "inline": "Long_SL_Message",
+        "internalID": "Long_SL_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_112": {
+        "name": "Exit long TP Message",
+        "inline": "Exit_long_TP_Message",
+        "internalID": "Exit_long_TP_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_113": {
+        "name": "Exit long SL Message",
+        "inline": "Exit_long_SL_Message",
+        "internalID": "Exit_long_SL_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_114": {
+        "name": "Short Entry Message",
+        "inline": "Short_Entry_Message",
+        "internalID": "Short_Entry_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_115": {
+        "name": "Exit Short Message",
+        "inline": "Exit_Short_Message",
+        "internalID": "Exit_Short_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_116": {
+        "name": "Short TP Message",
+        "inline": "Short_TP_Message",
+        "internalID": "Short_TP_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_117": {
+        "name": "Short SL Message",
+        "inline": "Short_SL_Message",
+        "internalID": "Short_SL_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_118": {
+        "name": "Exit short TP Message",
+        "inline": "Exit_short_TP_Message",
+        "internalID": "Exit_short_TP_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_119": {
+        "name": "Exit short SL Message",
+        "inline": "Exit_short_SL_Message",
+        "internalID": "Exit_short_SL_Message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "__chart_bgcolor": {
+        "name": "chart.bgcolor",
+        "inline": "chartbgcolor",
+        "internalID": "chartbgcolor",
+        "type": "color",
+        "value": "rgba(0,0,0,0)",
+        "isHidden": true,
+        "isFake": true
+    },
+    "in_121": {
+        "name": "Initial Capital",
+        "inline": "Initial_Capital",
+        "internalID": "initial_capital",
+        "tooltip": "The amount of funds initially available for the strategy to trade",
+        "type": "float",
+        "value": 10000,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_122": {
+        "name": "pyramiding",
+        "inline": "pyramiding",
+        "internalID": "pyramiding",
+        "tooltip": "Maximum number of successive entries allowed in the same direction",
+        "type": "integer",
+        "value": 1,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_123": {
+        "name": "Calculate Strategy on Order's Fill(s)",
+        "inline": "Calculate_Strategy_on_Orders_Fills",
+        "internalID": "calc_on_order_fills",
+        "tooltip": "Enables an additional intrabar calculation immediately after an order fills",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_124": {
+        "name": "Calculate Strategy on every Tick(s)",
+        "inline": "Calculate_Strategy_on_every_Ticks",
+        "internalID": "calc_on_every_tick",
+        "tooltip": "Recalculates the strategy on each update of real-time bars",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_125": {
+        "name": "Backtesting Limit Order(s) fill assumption",
+        "inline": "Backtesting_Limit_Orders_fill_assumption",
+        "internalID": "backtest_fill_limits_assumption",
+        "tooltip": "The number of ticks past the limit price that must be reached for limit orders to be filled",
+        "type": "integer",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_126": {
+        "name": "Default entry/order Qty Type",
+        "inline": "Default_entryorder_Qty_Type",
+        "internalID": "default_qty_type",
+        "tooltip": "The number of contracts/shares/lots/units per trade, or the amount in base currency, or a percentage of available equity",
+        "type": "text",
+        "value": "fixed",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "fixed",
+            "cash_per_order",
+            "percent_of_equity"
+        ]
+    },
+    "in_127": {
+        "name": "Default entry/order Qty Value",
+        "inline": "Default_entryorder_Qty_Value",
+        "internalID": "default_qty_value",
+        "type": "float",
+        "value": 1,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_128": {
+        "name": "Base Currency",
+        "inline": "Base_Currency",
+        "internalID": "currency",
+        "tooltip": "Currency used in calculations and strategy results",
+        "type": "text",
+        "value": "NONE",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "NONE",
+            "USD",
+            "EUR",
+            "AUD",
+            "GBP",
+            "NZD",
+            "CAD",
+            "CHF",
+            "HKD",
+            "JPY",
+            "NOK",
+            "RUB",
+            "SEK",
+            "SGD",
+            "TRY",
+            "ZAR",
+            "BTC",
+            "ETH",
+            "MYR",
+            "KRW",
+            "USDT",
+            "INR"
+        ]
+    },
+    "in_129": {
+        "name": "Backtesting slippage for market orders",
+        "inline": "Backtesting_slippage_for_market_orders",
+        "internalID": "slippage",
+        "tooltip": "The amount in ticks to be added to the fill price of market or stop orders",
+        "type": "integer",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_130": {
+        "name": "Commission Type",
+        "inline": "Commission_Type",
+        "internalID": "commission_type",
+        "tooltip": "Fees paid for each entry and exit",
+        "type": "text",
+        "value": "percent",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "percent",
+            "cash_per_contract",
+            "cash_per_order"
+        ]
+    },
+    "in_131": {
+        "name": "Commission Value",
+        "inline": "Commission_Value",
+        "internalID": "commission_value",
+        "type": "float",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_132": {
+        "name": "Process orders on bar Close",
+        "inline": "Process_orders_on_bar_Close",
+        "internalID": "process_orders_on_close",
+        "tooltip": "Fills market orders on the close of the bar where they are issued",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_133": {
+        "name": "Close entries rule",
+        "inline": "Close_entries_rule",
+        "internalID": "close_entries_rule",
+        "type": "text",
+        "value": "FIFO",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "FIFO",
+            "ANY"
+        ]
+    },
+    "in_134": {
+        "name": "Margin Long",
+        "inline": "Margin_Long",
+        "internalID": "margin_long",
+        "tooltip": "The percentage of equity required to fund long positions",
+        "type": "float",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_135": {
+        "name": "Margin Short",
+        "inline": "Margin_Short",
+        "internalID": "margin_short",
+        "tooltip": "The percentage of equity required to fund short positions",
+        "type": "float",
+        "value": 0,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_136": {
+        "name": "Run mode: 'backtest', 'alert' or something else",
+        "inline": "Run_mode_backtest_alert_or_something_else",
+        "internalID": "run_mode",
+        "type": "text",
+        "value": "BACKTEST",
+        "isHidden": false,
+        "isFake": true,
+        "options": [
+            "BACKTEST",
+            "ALERT"
+        ]
+    },
+    "in_137": {
+        "name": "Alert message template for run mode 'alert'",
+        "inline": "Alert_message_template_for_run_mode_alert",
+        "internalID": "alert_message",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_138": {
+        "name": "Alert type for run mode 'alert'",
+        "inline": "Alert_type_for_run_mode_alert",
+        "internalID": "alert_type",
+        "type": "text",
+        "value": "order_fills",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_139": {
+        "name": "exclude_from_report",
+        "inline": "exclude_from_report",
+        "internalID": "exclude_from_report",
+        "type": "text",
+        "value": "",
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_140": {
+        "name": "risk_free_rate",
+        "inline": "risk_free_rate",
+        "internalID": "risk_free_rate",
+        "type": "float",
+        "value": 2,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_141": {
+        "name": "Use Bar Magnifier",
+        "inline": "Use_Bar_Magnifier",
+        "internalID": "use_bar_magnifier",
+        "tooltip": "On historical bars, uses more precise lower timeframe prices for more realistic results",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    },
+    "in_142": {
+        "name": "Fill orders using standard OHLC",
+        "inline": "Fill_orders_using_standard_OHLC",
+        "internalID": "fill_orders_on_standard_ohlc",
+        "tooltip": "Forces strategies running on Heikin Ashi charts to fill orders using actual OHLC prices, for more realistic results",
+        "type": "bool",
+        "value": false,
+        "isHidden": false,
+        "isFake": true
+    }
+}
+{"level":"info","message":"All done.","timestamp":"2023-12-03T11:15:38.449Z"}
+[32minfo[39m: All done. {"timestamp":"2023-12-03T11:15:38.449Z"}

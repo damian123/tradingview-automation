@@ -10,7 +10,7 @@ var walk = function(dir, done) {
     if (!pending) return done(null, results);
     list.forEach(function(file) {
       file = path.resolve(dir, file);
-      if (file.endsWith('-1D.json'))
+      if (file.endsWith('-45.json'))
         results.push(file);
       if (!--pending) done(null, results);
     });

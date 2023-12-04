@@ -78,12 +78,12 @@ async function runBackTest(pair) {
             // }
             // });
 
-            const chart = new client.Session.Chart();
+            // const chart = new client.Session.Chart();
             
-            chart.setMarket(pair, {
-                timeframe: timeframe,
-                range: range,
-            });
+            // chart.setMarket(pair, {
+            //     timeframe: timeframe,
+            //     range: range,
+            // });
             chart.onError((...error) => {
                 logger.error(`Error when settijng market for ${pair}: ${error[0]}`);
                 reject(`${pair} ${error[0]}`);
@@ -140,17 +140,18 @@ async function runBackTest(pair) {
 
                     study.remove();
                     client.end();
-                    resolve("done")
+                    resolve("done");
                     return;
                 });
             });
-        }
-        catch(e) {
+        })
+        .catch(e => {
             reject(`${pair} ${e}`);
             client.end();
+        });
             return;
         }    
-    })
+    )
 };
 
 async function run () {
